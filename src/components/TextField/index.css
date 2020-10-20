@@ -1,21 +1,17 @@
 :root {
   --white: #fff;
-  --black: rgb(45, 52, 54);
+  --black: rgb(35, 40, 40);
   --grey: rgb(223, 230, 233);
   --light-grey: rgb(178, 190, 195);
-  --primary-color: rgb(253, 203, 110);
-  --error-color: rgb(233, 49, 73);
+  --dark-grey:#5c5c5c;
+  --primary-color: rgb(45, 100, 30);
+  --error-color: rgb(160, 30, 30);
   font-size: 16px;
-}
-
-.container {
-  max-width: 400px;
-  margin: 2rem auto;
 }
 
 div.form-field {
   display: block;
-  margin-bottom: 16px;
+  margin-bottom: 15px;
 }
 
 div.form-field.is-focused .control::after {
@@ -25,26 +21,28 @@ div.form-field.is-focused .control::after {
 
 div.form-field.is-focused .control label {
   color: var(--primary-color);
-  font-size: 0.75rem;
-  transform: translateY(-14px);
+  font-size: 1rem;
+  transform: translateY(-20px);
 }
 
 div.form-field.has-value .control label {
-  font-size: 0.75rem;
-  transform: translateY(-14px);
+  color: var(--primary-color);
+  font-size: 1rem;
+  transform: translateY(-20px);
 }
 
 div.form-field .control {
-  border-radius: 8px 8px 0 0;
+  border-bottom: 2px solid var(--darkgrey);
   overflow: hidden;
   position: relative;
   width: 100%;
 }
 
+
 div.form-field .control::after {
   border-bottom: 2px solid var(--primary-color);
   bottom: 0;
-  content: '';
+  content: "";
   display: block;
   left: 0;
   margin: 0 auto;
@@ -59,23 +57,24 @@ div.form-field .control input {
   appearance: none;
   background: transparent;
   border: 0;
-  border-bottom: 1px solid var(--grey);
+  border-bottom: 2px solid var(--grey);
   color: var(--black);
   display: block;
   font-size: 1.2rem;
   margin-top: 22px;
   outline: 0;
-  padding: 0 12px 10px 12px;
+  padding: 0px 0px 3px 0px;
   width: 100%;
 }
 
 div.form-field .control label {
+  color: var(--dark-grey);
   display: block;
   font-size: 1rem;
   font-weight: normal;
   left: 0;
   margin: 0;
-  padding: 24px 12px 0;
+  padding: 24px 0;
   position: absolute;
   top: 0;
   transition: all 400ms;
@@ -84,25 +83,10 @@ div.form-field .control label {
 
 div.form-field .has-error {
   color: var(--error-color);
-  text-align: right;
-  font-size: 0.75rem;
-  margin: 0.5rem;
+  display: block;
+  height: 1rem;
+  text-align: left;
+  font-size: 0.8rem;
+  padding: 10px 0;
 }
 
-.btn {
-  padding: 0.5rem 1.5rem;
-  font-size: 1.2rem;
-  border-radius: 3px;
-}
-
-.btn:disabled {
-  padding: 0.5rem 1.5rem;
-  font-size: 1.2rem;
-  background-color: var(--light-grey) !important;
-  color: var(--grey) !important;
-}
-
-.btn.primary {
-  background-color: var(--primary-color);
-  color: var(--white);
-}

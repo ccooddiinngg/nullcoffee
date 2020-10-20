@@ -1,12 +1,10 @@
 import React, { useState } from "react";
 import TextField from "../TextField";
 
-function nameIsRequired(val) {
-  return val.length > 0 ? "" : "Enter an username/email ";
-}
-
-function passwordIsRequired(val) {
-  return val.length > 0 ? "" : "Enter your password ";
+function isPassword(val) {
+  return /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/gm.test(val)
+    ? ""
+    : `⚠️ Invalid Password. Must be at least 8 characters, 1 uppercase letter, 1 lowercase letter, and 1 number.`;
 }
 
 function isEmail(val) {
@@ -14,15 +12,15 @@ function isEmail(val) {
     val
   )
     ? ""
-    : "Email is not valid";
+    : "⚠️ Invalid email address.";
 }
 
 const defaultValues = {
-  name: "",
+  email: "",
   password: "",
 };
 const defaultErrors = {
-  name: [],
+  email: [],
   password: [],
 };
 
@@ -33,26 +31,26 @@ export default function Login() {
   return (
     <div>
       <TextField
-        label="Name or email address"
-        name="name"
-        value={values.name}
-        onChange={(val) => {
-          const name = val;
-          setValues((prev) => ({ ...prev, name }));
+        label="Email address"
+        type="text"
+        name="email"
+        value={values.email}
+        onChange={(email) => {
+          setValues((prev) => ({ ...prev, email }));
         }}
-        validations={[nameIsRequired]}
-        errors={errors.name}
+        validations={[isEmail]}
+        errors={errors.email}
         setErrors={setErrors}
       />
       <TextField
         label="Password"
+        type="password"
         name="password"
         value={values.password}
-        onChange={(val) => {
-          const password = val;
+        onChange={(password) => {
           setValues((prev) => ({ ...prev, password }));
         }}
-        validations={[passwordIsRequired]}
+        validations={[isPassword]}
         errors={errors.password}
         setErrors={setErrors}
       />

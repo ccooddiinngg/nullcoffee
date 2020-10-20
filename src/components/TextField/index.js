@@ -3,6 +3,7 @@ import "./index.css";
 
 export default function TextField({
   label,
+  type,
   name,
   value,
   onChange,
@@ -12,7 +13,7 @@ export default function TextField({
 }) {
   const [focused, setFocused] = useState(false);
 
-  const ref = useRef(null);
+  const inputRef = useRef(null);
 
   function validate(validations) {
     setErrors((prev) => ({
@@ -24,29 +25,30 @@ export default function TextField({
   }
 
   return (
-    <div>
-      <div
-        className={`form-field ${focused ? "is-focused" : ""} ${
-          value.length > 0 ? "has-value" : ""
-        }`}
-      >
-        <div className="control">
-          <label onClick={() => ref.current.focus()}>{label}</label>
-          <input
-            ref={ref}
-            type="text"
-            value={value}
-            onChange={(e) => onChange(e.target.value)}
-            onFocus={() => setFocused(true)}
-            onBlur={() => {
-              setFocused(false);
-              validate(validations);
-            }}
-          />
-        </div>
-        {errors.length > 0 ? (
-          <div className="has-error">{errors.join(", ")}</div>
-        ) : null}
+    <div
+      className={`form-field ${focused ? "is-focused" : ""} ${
+        value.length > 0 ? "has-value" : ""
+      } ${errors.length > 0 ? "invalid" : ""}`}
+    >
+      <div className="control">
+        <label onClick={() => inputRef.current.focus()}>{label}</label>
+        <input
+          ref={inputRef}
+          type={type}
+          value={value}
+          onChange={(e) => {
+            onChange(e.target.value);
+          }}
+          onFocus={() => setFocused(true)}
+          onBlur={() => {
+            setFocused(false);
+            validate(validations);
+          }}
+        />
+      </div>
+
+      <div className="has-error">
+        {errors.length > 0 ? errors.join(", ") : ""}
       </div>
     </div>
   );
