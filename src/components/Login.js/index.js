@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import TextField from "../TextField";
+import "./index.css";
 
 function isPassword(val) {
   return /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/gm.test(val)
@@ -29,7 +30,7 @@ export default function Login() {
   const [errors, setErrors] = useState(defaultErrors);
 
   return (
-    <div>
+    <div className="signin-container">
       <TextField
         label="Email address"
         type="text"
@@ -54,6 +55,8 @@ export default function Login() {
         errors={errors.password}
         setErrors={setErrors}
       />
+      <div className="signin-text">Forgot your password?</div>
+      <div className="signin-btn">Sign in</div>
     </div>
   );
 }

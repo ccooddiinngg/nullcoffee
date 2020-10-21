@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useState } from "react";
+import "./index.css";
 
 export default function Menu() {
+  const [open, setOpen] = useState(false);
   return (
-    <div>
-      <div className="menu"></div>
+    <div className={`menu-btn ${open? "open" : ""}`} onClick={() => setOpen(!open)}>
+      <div className="menu-btn__burger"></div>
     </div>
-  )
+  );
 }

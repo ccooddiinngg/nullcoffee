@@ -1,4 +1,4 @@
-:root {
+/* :root {
   --white: #fff;
   --black: rgb(35, 40, 40);
   --grey: rgb(223, 230, 233);
@@ -7,7 +7,7 @@
   --primary-color: rgb(45, 100, 30);
   --error-color: rgb(160, 30, 30);
   font-size: 16px;
-}
+} */
 
 div.form-field {
   display: block;
@@ -32,7 +32,7 @@ div.form-field.has-value .control label {
 }
 
 div.form-field .control {
-  border-bottom: 2px solid var(--darkgrey);
+  border-bottom: 1px solid var(--dark-grey);
   overflow: hidden;
   position: relative;
   width: 100%;
@@ -57,7 +57,7 @@ div.form-field .control input {
   appearance: none;
   background: transparent;
   border: 0;
-  border-bottom: 2px solid var(--grey);
+  border-bottom: 1px solid var(--grey);
   color: var(--black);
   display: block;
   font-size: 1.2rem;
