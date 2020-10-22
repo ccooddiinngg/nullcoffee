@@ -1,0 +1,18 @@
+.menu-item-container {
+  width: 160px;
+  height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.menu-item-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+
+.menu-item-title {
+  padding: 15px;
+}

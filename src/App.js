@@ -1,13 +1,15 @@
 import React from 'react';
-import Login from './components/Login.js';
-import Menu from './components/Menu/index.js';
 import "./App.css"
+import Header from './components/Header';
+import Cart from './components/Cart';
+import Menu from './components/Menu';
 
 function App() {
   return (
     <div className="App">
-      <Menu/>
-      <Login/>
+      <Header />
+      <Menu />
+      <Cart />
     </div>
   );
 }

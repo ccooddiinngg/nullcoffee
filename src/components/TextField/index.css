@@ -21,13 +21,13 @@ div.form-field.is-focused .control::after {
 
 div.form-field.is-focused .control label {
   color: var(--primary-color);
-  font-size: 1rem;
+  font-size: 0.8rem;
   transform: translateY(-20px);
 }
 
 div.form-field.has-value .control label {
   color: var(--primary-color);
-  font-size: 1rem;
+  font-size: 0.8rem;
   transform: translateY(-20px);
 }
 
@@ -56,8 +56,7 @@ div.form-field .control::after {
 div.form-field .control input {
   appearance: none;
   background: transparent;
-  border: 0;
-  border-bottom: 1px solid var(--grey);
+  border: none;
   color: var(--black);
   display: block;
   font-size: 1.2rem;

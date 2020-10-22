@@ -1,19 +1,23 @@
 .signin-container {
   display: flex;
+  width: 100vw;
+  max-width: 400px;
+  height: 400px;
+  margin: 10px auto;
+}
+
+.signin-content {
+  width: 80%;
+  display: flex;
   flex-direction: column;
   align-self: center;
-  width: 100%;
-  max-width: 600px;
-  height: 600px;
-  background-color: var(--grey);
-  padding: 10px;
 }
 
 .signin-text {
   font-size: 0.8rem;
   color: var(--primary-color);
   align-self: flex-start;
-  padding: 20px 0;
+  padding: 15px 0;
   text-decoration: underline;
 }
 
@@ -24,15 +28,15 @@
 
 .signin-btn {
   width: 100px;
-  border: 1px solid var(--primary-color);
+  border: 1px solid var(--light-green);
   border-radius: 30px;
-  background-color: var(--primary-color);
+  background-color: var(--light-green);
   text-align: center;
   color: var(--white);
   font-size: 1.2rem;
   font-weight: 600;
   padding: 10px;
-  margin: 30px 10px;
+  margin: 10px;
   align-self: flex-end;
   box-shadow: 5px 5px 5px #c5cebe;
   cursor: pointer;
