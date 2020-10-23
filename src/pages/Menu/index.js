@@ -148,13 +148,13 @@ const menu = [
             items: [
               {
                 title: "Silver Vacuum Stainless Steel Tumbler - 12oz",
-                size: size.Tumbler[0],
+                size: size.Tumbler,
                 src:
                   "https://globalassets.starbucks.com/assets/5b0b47d56d1e4b7b89d4bae6d8f458a7.jpg?impolicy=1by1_wide_1242",
               },
               {
                 title: "Satin Black Stainless-Steel Tumbler - 20 fl oz",
-                size: size.Tumbler[1],
+                size: size.Tumbler,
                 src:
                   "https://globalassets.starbucks.com/assets/6fe6d18b57c54db18c476a0fe9326bf1.jpg?impolicy=1by1_wide_1242",
               },
@@ -166,7 +166,7 @@ const menu = [
   },
 ];
 
-export default function Menu({ handelOrders }) {
+export default function Menu() {
   return (
     <div className="menu">
       {menu.map((category, index) => (
