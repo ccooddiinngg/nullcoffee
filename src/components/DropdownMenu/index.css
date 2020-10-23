@@ -1,28 +1,11 @@
+
 .main-menu-title {
   font-size: 1.4rem;
   color: var(--primary-color);
   padding: 10px;
 }
 
-@keyframes moveIn {
-  from {
-    right: -250px;
-  }
-  to {
-    right: 0px;
-  }
-}
-
-@keyframes moveOut {
-  from {
-    right: 0px;
-  }
-  to {
-    right: -250px;
-  }
-}
-
-.main-menu.open {
+.main-menu {
   width: 250px;
   height: 100vh;
   display: block;
@@ -30,8 +13,8 @@
   top: 70px;
   right: 0;
   z-index: 100;
-  /* background-color: var(--white); */
-  animation: moveIn 0.5s ease-in;
+  background-color: var(--white);
+  transition: all 400ms ease-in;
 }
 
 .main-menu.hide {
@@ -42,7 +25,8 @@
   top: 70px;
   right: -250px;
   z-index: 100;
-  animation: moveOut 0.5s ease-in;
+  background-color: var(--white);
+  transition: all 400ms ease-in;
 }
 
 .main-menu li {

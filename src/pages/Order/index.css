@@ -1,40 +1,57 @@
 @keyframes moveIn {
   from {
-    bottom: -150px;
+    bottom: 0px;
   }
   to {
-    bottom: 0px;
+    bottom: 60px;
   }
 }
 
 @keyframes moveOut {
   from {
-    bottom: 0px;
+    bottom: 60px;
   }
   to {
-    bottom: -150px;
+    bottom: 0px;
   }
 }
-.order-container.show{
+.order-container{
   width: 100vw;
-  height: 150px;
+  height: 100px;
   position: fixed;
-  bottom: 0;
+  bottom: 60px;
   background-color: var(--white);
   animation: moveIn 0.5s ease-in;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .order-container.hide{
   width: 100vw;
-  height: 150px;
+  height: 100px;
   position: fixed;
-  bottom: -150px;
+  bottom: 0px;
   background-color: var(--white);
   animation: moveOut 0.5s ease-in;
 }
 
 .order-img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  padding: 10px;
+}
+
+.order-cup-size {
+  background-color: var(--primary-color);
   width: 30px;
   height: 30px;
   border-radius: 50%;
+  padding: 5px;
+  margin: 5px;
+  text-align: center;
+  line-height: 1.8rem;
+  color: var(--white);
+  cursor: pointer;
 }

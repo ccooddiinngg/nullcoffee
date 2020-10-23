@@ -17,15 +17,12 @@ export default function Order() {
   };
 
   return (
-    <div className={`order-container ${open ? "show" : "hide"}`}>
+    <div className={`order-container ${open ? "" : "hide"}`}>
       <img className="order-img" src={item.src} alt={item.title} />
       {item.size.map((s, i) => (
-        <img
-          className="order-cup-img"
-          src={`cup-${s.slice(0, 1)}.png`}
-          alt={s}
-          key={i}
-        />
+        <div className="order-cup-size" key={i} onClick={()=>console.log(s)}>
+          {s.slice(0, 1)}
+        </div>
       ))}
     </div>
   );
