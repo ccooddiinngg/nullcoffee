@@ -4,32 +4,30 @@ import "./index.css";
 import ProductContext from "../../context/ProductContext";
 
 export default function Order() {
-  
+  const [selected, setSelected] = useState(2);
+  const [order, setOrder] = useState({});
   const [open, setOpen] = useState(false);
-  const { product, setProduct } = useContext(ProductContext);
+  const { product, setProduct, cart, setCart } = useContext(ProductContext);
 
   useEffect(() => {
     if (Object.keys(product).length > 0) {
       setOpen(true);
+      setSelected(2)
+      setOrder({ ...order, title: product.title, size: size[selected] });
     }
   }, [product]);
 
   const handleAdd = () => {
-    setProduct({});
-    setOpen(false);
+    setCart([...cart, order]);
   };
 
   const handleCancel = () => {
     setProduct({});
+    setSelected(2)
     setOpen(false);
   };
 
-  const size = [
-    "Short (8fl oz)",
-    "Tall (12fl oz)",
-    "Grande (16fl oz)",
-    "Venti (20fl oz)",
-  ];
+  const size = ["S", "T", "G", "V"];
 
   return (
     <div className={`order-container ${open ? "" : "hide"}`}>
@@ -47,11 +45,14 @@ export default function Order() {
         <div className="order-size-group">
           {size.map((s, i) => (
             <div
-              className="order-cup-size"
+              className={`order-cup-size ${i === selected ? "selected" : ""}`}
               key={i}
-              onClick={() => console.log(s)}
+              onClick={() => {
+                setSelected(i);
+                setOrder({ ...order, size: s });
+              }}
             >
-              {s.slice(0, 1)}
+              {s}
             </div>
           ))}
         </div>
@@ -59,6 +60,7 @@ export default function Order() {
           <div className="order-btn-cancel" onClick={handleCancel}>
             X
           </div>
+
           <div className="order-btn-ok" onClick={handleAdd}>
             Add
           </div>
