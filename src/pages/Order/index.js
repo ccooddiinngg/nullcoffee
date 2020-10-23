@@ -4,30 +4,32 @@ import "./index.css";
 import ProductContext from "../../context/ProductContext";
 
 export default function Order() {
-  const [selected, setSelected] = useState(2);
-  const [order, setOrder] = useState({});
+  const [selected, setSelected] = useState(0);
   const [open, setOpen] = useState(false);
   const { product, setProduct, cart, setCart } = useContext(ProductContext);
 
   useEffect(() => {
     if (Object.keys(product).length > 0) {
       setOpen(true);
-      setSelected(2)
-      setOrder({ ...order, title: product.title, size: size[selected] });
+      if (product.size.length >= 3) {
+        setSelected(2);
+      } else {
+        setSelected(1);
+      }
     }
   }, [product]);
 
   const handleAdd = () => {
+    const order = { title: product.title, size: product.size[selected] };
+
     setCart([...cart, order]);
   };
 
   const handleCancel = () => {
     setProduct({});
-    setSelected(2)
+    setSelected(0);
     setOpen(false);
   };
-
-  const size = ["S", "T", "G", "V"];
 
   return (
     <div className={`order-container ${open ? "" : "hide"}`}>
@@ -43,16 +45,15 @@ export default function Order() {
 
       <div>
         <div className="order-size-group">
-          {size.map((s, i) => (
+          {product?.size?.map((s, i) => (
             <div
               className={`order-cup-size ${i === selected ? "selected" : ""}`}
               key={i}
               onClick={() => {
                 setSelected(i);
-                setOrder({ ...order, size: s });
               }}
             >
-              {s}
+              {s.slice(0, 1)}
             </div>
           ))}
         </div>

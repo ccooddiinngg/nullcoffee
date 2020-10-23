@@ -9,7 +9,7 @@ const size = {
     "Grande (16fl oz)",
     "Venti (20fl oz)",
   ],
-  Tumbler: ["12 fl oz", "20fl oz"],
+  Tumbler: ["S 12 fl oz", "L 20fl oz"],
 };
 
 const menu = [
