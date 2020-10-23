@@ -3,7 +3,7 @@ import DropdownMenu from "../DropdownMenu";
 import "./index.css";
 
 export default function MenuBtn() {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(null);
   return (
     <div
       className={`menu-btn ${open ? "open" : ""}`}

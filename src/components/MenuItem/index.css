@@ -5,6 +5,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  cursor: pointer;
 }
 
 .menu-item-img {
@@ -14,5 +15,7 @@
 }
 
 .menu-item-title {
+  font-size: 0.9rem;
+  color: var(--dark-grey);
   padding: 15px;
 }

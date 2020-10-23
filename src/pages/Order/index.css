@@ -1,0 +1,40 @@
+@keyframes moveIn {
+  from {
+    bottom: -150px;
+  }
+  to {
+    bottom: 0px;
+  }
+}
+
+@keyframes moveOut {
+  from {
+    bottom: 0px;
+  }
+  to {
+    bottom: -150px;
+  }
+}
+.order-container.show{
+  width: 100vw;
+  height: 150px;
+  position: fixed;
+  bottom: 0;
+  background-color: var(--white);
+  animation: moveIn 0.5s ease-in;
+}
+
+.order-container.hide{
+  width: 100vw;
+  height: 150px;
+  position: fixed;
+  bottom: -150px;
+  background-color: var(--white);
+  animation: moveOut 0.5s ease-in;
+}
+
+.order-img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}

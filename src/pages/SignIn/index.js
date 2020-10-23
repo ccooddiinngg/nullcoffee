@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import TextField from "../TextField";
-import Spacer from "../Spacer";
+import TextField from "../../components/TextField";
+import Spacer from "../../components/Spacer";
 import "./index.css";
 
 function isPassword(val) {

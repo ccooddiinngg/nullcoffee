@@ -1,6 +1,6 @@
-import React from 'react'
-import Bag from "./shopping-bag-solid.svg"
-import "./index.css"
+import React from "react";
+import Bag from "./shopping-bag-solid.svg";
+import "./index.css";
 
 export default function Cart() {
   return (

@@ -1,4 +1,4 @@
-.main-menu .title {
+.main-menu-title {
   font-size: 1.4rem;
   color: var(--primary-color);
   padding: 10px;
@@ -22,27 +22,26 @@
   }
 }
 
-.main-menu.display {
+.main-menu.open {
   width: 250px;
-  height: 1000px;
+  height: 100vh;
   display: block;
   position: absolute;
-  top: 80px;
+  top: 70px;
   right: 0;
   z-index: 100;
-  background-color: var(--white);
+  /* background-color: var(--white); */
   animation: moveIn 0.5s ease-in;
 }
 
 .main-menu.hide {
   width: 250px;
-  height: 1000px;
+  height: 100vh;
   display: block;
   position: absolute;
-  top: 80px;
+  top: 70px;
   right: -250px;
   z-index: 100;
-  background-color: var(--white);
   animation: moveOut 0.5s ease-in;
 }
 
