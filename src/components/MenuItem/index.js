@@ -1,12 +1,12 @@
 import React, { useContext } from "react";
 import "./index.css";
 
-import OrderContext from '../../context/OrderContext'
+import ProductContext from '../../context/ProductContext'
 export default function MenuItem({item}) {
 
-  const {setOrder} = useContext(OrderContext);
+  const {setProduct} = useContext(ProductContext);
   return (
-    <div className="menu-item-container" onClick={()=>setOrder(item)}>
+    <div className="menu-item-container" onClick={()=>setProduct(item)}>
       <img
         className="menu-item-img"
         src={item.src}

@@ -1,25 +1,26 @@
 import React, { useContext, useEffect, useState } from "react";
 import "./index.css";
 
-import OrderContext from "../../context/OrderContext";
+import ProductContext from "../../context/ProductContext";
 
 export default function Order() {
+  
   const [open, setOpen] = useState(false);
-  const { order, setOrder } = useContext(OrderContext);
+  const { product, setProduct } = useContext(ProductContext);
 
   useEffect(() => {
-    if (Object.keys(order).length > 0) {
+    if (Object.keys(product).length > 0) {
       setOpen(true);
     }
-  }, [order]);
+  }, [product]);
 
   const handleAdd = () => {
-    setOrder({});
+    setProduct({});
     setOpen(false);
   };
 
   const handleCancel = () => {
-    setOrder({});
+    setProduct({});
     setOpen(false);
   };
 
@@ -32,8 +33,8 @@ export default function Order() {
 
   return (
     <div className={`order-container ${open ? "" : "hide"}`}>
-      {Object.keys(order).length > 0 ? (
-        <img className="order-img" src={order.src} alt={order.title} />
+      {Object.keys(product).length > 0 ? (
+        <img className="order-img" src={product.src} alt={product.title} />
       ) : (
         <img
           className="order-img"

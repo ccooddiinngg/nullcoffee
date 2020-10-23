@@ -4,18 +4,18 @@ import Header from "./pages/Header";
 import Cart from "./pages/Cart";
 import Menu from "./pages/Menu";
 import Order from "./pages/Order";
-import { OrderProvider } from "./context/OrderContext";
+import { ProductProvider } from "./context/ProductContext";
 
 function App() {
  
   return (
     <div className="App">
-      <OrderProvider>
+      <ProductProvider>
         <Header />
         <Menu />
         <Order />
         <Cart />
-      </OrderProvider>
+      </ProductProvider>
     </div>
   );
 }
