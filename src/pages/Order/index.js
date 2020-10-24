@@ -20,9 +20,17 @@ export default function Order() {
   }, [product]);
 
   const handleAdd = () => {
-    const order = { title: product.title, size: product.size[selected] };
-
-    setCart([...cart, order]);
+    
+    if (cart.length >= 10) {
+      
+    } else {
+      const order = {
+        title: product.title,
+        size: product.size[selected],
+        price: product.price[selected],
+      };
+      setCart([...cart, order]);
+    }
   };
 
   const handleCancel = () => {

@@ -15,6 +15,9 @@ export default function Cart() {
     if (cart.length > 0) {
       setMessage(`${cart[cart.length - 1].title} added to your cart.`);
     }
+    if (cart.length === 10) {
+      setMessage("Cart is full!");
+    }
 
     const timer = setTimeout(() => {
       setAdding(false);
@@ -23,17 +26,48 @@ export default function Cart() {
     return () => clearTimeout(timer);
   }, [cart]);
 
+  const handleRemove = (i) => {
+    setCart(cart.filter((_item, _i) => _i !== i));
+  };
+
   return (
-    <div className="cart-container">
-      <div className="cart-message">{message}</div>
-      <div className="cart-bag-content">
-        <img
-          className={`cart-bag-icon ${adding ? "active" : ""}`}
-          src={Bag}
-          alt="Bag"
-        />
-        <span className="cart-bag-count">{cart.length}</span>
+    <>
+      <div className={`cart-details ${extend ? "" : "hide"}`}>
+        <CartDetail cart={cart} handleRemove={handleRemove} />
       </div>
-    </div>
+      <div className="cart-container">
+        <div className="cart-message">{message}</div>
+        <div className="cart-bag-content" onClick={() => setExtend(!extend)}>
+          <img
+            className={`cart-bag-icon ${adding ? "active" : ""}`}
+            src={Bag}
+            alt="Bag"
+          />
+          <span className="cart-bag-count">{cart.length}</span>
+        </div>
+      </div>
+    </>
+  );
+}
+
+function CartDetail({ cart, handleRemove }) {
+  return (
+    <>
+      <div>
+        {cart.map((item, i) => (
+          <div className="cart-detail-item" key={i}>
+            <span className="cart-detail-item-text">{item.title}</span>
+            <span className="cart-detail-item-text">{item.size}</span>
+            <span className="cart-detail-item-text">{item.price}</span>
+            <div
+              className="cart-detail-item-btn"
+              onClick={() => handleRemove(i)}
+            >
+              ✕
+            </div>
+          </div>
+        ))}
+      </div>
+    </>
   );
 }

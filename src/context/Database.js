@@ -5,7 +5,7 @@ const size = {
     "Grande (16fl oz)",
     "Venti (20fl oz)",
   ],
-  Tumbler: ["S 12 fl oz", "L 20fl oz"],
+  Tumbler: ["O"],
 };
 
 const category = {
@@ -25,7 +25,7 @@ const MENU = [
     src:
       "https://globalassets.starbucks.com/assets/f12bc8af498d45ed92c5d6f1dac64062.jpg?impolicy=1by1_wide_1242",
     category: category.AME,
-    price: 299
+    price: [299,399,499,599]
   },
 
   {
@@ -34,7 +34,7 @@ const MENU = [
     src:
       "https://globalassets.starbucks.com/assets/abb4f97948c948c28ea2dcaf933c4f6b.jpg?impolicy=1by1_wide_1242",
     category: category.BRE,
-    price: 299
+    price: [299,399,499,599]
   },
   {
     title: "Caffè Misto",
@@ -42,7 +42,7 @@ const MENU = [
     src:
       "https://globalassets.starbucks.com/assets/d668acbc691b47249548a3eeac449916.jpg?impolicy=1by1_wide_1242",
     category: category.BRE,
-    price: 299
+    price: [299,399,499,599]
   },
   {
     title: "Dark Roast Coffee",
@@ -50,7 +50,7 @@ const MENU = [
     src:
       "https://globalassets.starbucks.com/assets/0279f9c5fa5941d2a65dd183d7a0b386.jpg?impolicy=1by1_wide_1242",
     category: category.BRE,
-    price: 299
+    price: [299,399,499,599]
   },
 
   {
@@ -59,7 +59,7 @@ const MENU = [
     src:
       "https://globalassets.starbucks.com/assets/5c515339667943ce84dc56effdf5fc1b.jpg?impolicy=1by1_wide_1242",
     category: category.CAP,
-    price: 399
+    price: [299,399,499,599]
   },
 
   {
@@ -68,7 +68,7 @@ const MENU = [
     src:
       "https://globalassets.starbucks.com/assets/ec519dd5642c41629194192cce582135.jpg?impolicy=1by1_wide_1242",
     category: category.ESP,
-    price: 299
+    price: [299,399,499,599]
   },
   {
     title: "Espresso Con Panna",
@@ -76,7 +76,7 @@ const MENU = [
     src:
       "https://globalassets.starbucks.com/assets/e9330b18ae524e69bdcbe97460d6f5bb.jpg?impolicy=1by1_wide_1242",
     category: category.ESP,
-    price: 299
+    price: [299,399,499,599]
   },
 
   {
@@ -85,7 +85,7 @@ const MENU = [
     src:
       "https://globalassets.starbucks.com/assets/e208cdee37944828bc94e101c6ae1bbe.jpg?impolicy=1by1_wide_1242",
     category: category.LAT,
-    price: 399
+    price: [299,399,499,599]
   },
   {
     title: "Blonde Espresso",
@@ -93,7 +93,7 @@ const MENU = [
     src:
       "https://globalassets.starbucks.com/assets/9eb90cb6981d42f5859376c4be666060.jpg?impolicy=1by1_wide_1242",
     category: category.LAT,
-    price: 399
+    price: [299,399,499,599]
   },
   {
     title: "Caffè Latte",
@@ -101,7 +101,7 @@ const MENU = [
     src:
       "https://globalassets.starbucks.com/assets/b635f407bbcd49e7b8dd9119ce33f76e.jpg?impolicy=1by1_wide_1242",
     category: category.LAT,
-    price: 399
+    price: [299,399,499,599]
   },
   {
     title: "Cinnamon Dolce Latte",
@@ -109,7 +109,7 @@ const MENU = [
     src:
       "https://globalassets.starbucks.com/assets/9329c03ce24f4623be25dd24d7537db2.jpg?impolicy=1by1_wide_1242",
     category: category.LAT,
-    price: 399
+    price: [299,399,499,599]
   },
 
   {
@@ -118,7 +118,7 @@ const MENU = [
     src:
       "https://globalassets.starbucks.com/assets/da9f3c12cdba4abc913f4d8e294e7629.jpg",
     category: category.MOC,
-    price: 399
+    price: [299,399,499,599]
   },
   {
     title: "Caffè Mocha",
@@ -126,7 +126,7 @@ const MENU = [
     src:
       "https://globalassets.starbucks.com/assets/f4ec500b34624242b15c2d29e53f3c48.jpg?impolicy=1by1_wide_1242",
     category: category.MOC,
-    price: 399
+    price: [299,399,499,599]
   },
   {
     title: "White Chocolate Mocha",
@@ -134,7 +134,7 @@ const MENU = [
     src:
       "https://globalassets.starbucks.com/assets/4b621e63f6ba4c19a8618055284eca8d.jpg?impolicy=1by1_wide_1242",
     category: category.MOC,
-    price: 399
+    price: [299,399,499,599]
   },
 
   {
@@ -143,7 +143,7 @@ const MENU = [
     src:
       "https://globalassets.starbucks.com/assets/5b0b47d56d1e4b7b89d4bae6d8f458a7.jpg?impolicy=1by1_wide_1242",
     category: category.TUM,
-    price: 1099
+    price: [1099]
   },
   {
     title: "Satin Black Stainless-Steel Tumbler - 20 fl oz",
@@ -151,7 +151,7 @@ const MENU = [
     src:
       "https://globalassets.starbucks.com/assets/6fe6d18b57c54db18c476a0fe9326bf1.jpg?impolicy=1by1_wide_1242",
     category: category.TUM,
-    price: 1299
+    price: [1299]
   },
 ];
 
