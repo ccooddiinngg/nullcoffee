@@ -12,7 +12,7 @@ export default function Cart() {
 
   useEffect(() => {
     setAdding(true);
-    if (cart.length > 0) {
+    if (cart.length > 0 && !extend) {
       setMessage(`${cart[cart.length - 1].title} added to your cart.`);
     }
     if (cart.length === 10) {
@@ -53,6 +53,7 @@ export default function Cart() {
 function CartDetail({ cart, handleRemove }) {
   return (
     <>
+      {cart.length === 0 ? "Cart is empty." : null}
       <div>
         {cart.map((item, i) => (
           <div className="cart-detail-item" key={i}>
