@@ -26,8 +26,8 @@ export default function Order() {
   };
 
   const handleCancel = () => {
-    setProduct({});
     setSelected(0);
+    setProduct({});
     setOpen(false);
   };
 
@@ -59,7 +59,7 @@ export default function Order() {
         </div>
         <div className="order-btn-group">
           <div className="order-btn-cancel" onClick={handleCancel}>
-            X
+            ↩︎
           </div>
 
           <div className="order-btn-ok" onClick={handleAdd}>

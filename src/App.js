@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import Header from "./pages/Header";
 import Cart from "./pages/Cart";
-import Menu from "./pages/Menu";
+import MenuList from "./pages/MenuList";
 import Order from "./pages/Order";
 import { ProductProvider } from "./context/ProductContext";
 
@@ -12,7 +12,7 @@ function App() {
     <div className="App">
       <ProductProvider>
         <Header />
-        <Menu />
+        <MenuList />
         <Order />
         <Cart />
       </ProductProvider>

@@ -1,0 +1,17 @@
+
+.menu-list-container {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.menu-category {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 100px;
+  margin-bottom: 10px;
+  margin-left: 70px;
+  padding: 10px;
+  z-index: 0;
+}
+

@@ -1,0 +1,14 @@
+.left-nav-container {
+  width: 100px;
+  height: 100vh;
+  margin-top: 100px;
+}
+
+.left-nav-category {
+  font-size: 1.1rem;
+  font-weight: 100;
+  color: var(--black);
+  padding: 5px;
+  margin-left: 10px;
+  cursor: pointer;
+}
