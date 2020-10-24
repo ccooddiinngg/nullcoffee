@@ -14,7 +14,7 @@ export default function Order() {
       if (product.size.length >= 3) {
         setSelected(2);
       } else {
-        setSelected(1);
+        setSelected(0);
       }
     }
   }, [product]);
@@ -67,7 +67,7 @@ export default function Order() {
         </div>
         <div className="order-btn-group">
           <div className="order-btn-cancel" onClick={handleCancel}>
-            ↩︎
+            Done
           </div>
 
           <div className="order-btn-ok" onClick={handleAdd}>

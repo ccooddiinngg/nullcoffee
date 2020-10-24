@@ -33,7 +33,11 @@ export default function Cart() {
   return (
     <>
       <div className={`cart-details ${extend ? "" : "hide"}`}>
-        <CartDetail cart={cart} handleRemove={handleRemove} />
+        <CartDetail
+          cart={cart}
+          handleRemove={handleRemove}
+          setExtend={setExtend}
+        />
       </div>
       <div className="cart-container">
         <div className="cart-message">{message}</div>
@@ -50,16 +54,25 @@ export default function Cart() {
   );
 }
 
-function CartDetail({ cart, handleRemove }) {
+function CartDetail({ cart, handleRemove, setExtend }) {
   return (
-    <>
-      {cart.length === 0 ? "Cart is empty." : null}
+    <div>
+      <div className="cart-detail-close-btn" onClick={() => setExtend(false)}>
+        X
+      </div>
+      {cart.length === 0
+        ? "Cart is empty..."
+        : `Total ${cart.length} item${
+            cart.length === 1 ? "" : "s"
+          } in your cart.`}
       <div>
         {cart.map((item, i) => (
           <div className="cart-detail-item" key={i}>
             <span className="cart-detail-item-text">{item.title}</span>
             <span className="cart-detail-item-text">{item.size}</span>
-            <span className="cart-detail-item-text">{item.price}</span>
+            <span className="cart-detail-item-text">
+              {showPrice(item.price)}
+            </span>
             <div
               className="cart-detail-item-btn"
               onClick={() => handleRemove(i)}
@@ -69,6 +82,17 @@ function CartDetail({ cart, handleRemove }) {
           </div>
         ))}
       </div>
-    </>
+      <div className="cart-detail-total-price">
+        {cart.length > 0 && `Total: ${showPrice(showTotal(cart))}`}
+      </div>
+    </div>
   );
+}
+
+function showPrice(price) {
+  return `${Number.parseFloat(price / 100).toFixed(2)} $`;
+}
+
+function showTotal(cart) {
+  return cart.reduce((acc, item) => (acc += item.price), 0);
 }
