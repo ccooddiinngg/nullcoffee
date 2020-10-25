@@ -8,19 +8,19 @@ export default function MenuList() {
   const { Menu } = useContext(ProductContext);
   const [menu, setMenu] = useState(Menu);
 
-  const [filter, setFilter] = useState("");
+  const [filter, setFilter] = useState("All");
 
   useEffect(() => {
     const filterMenu = () => {
-      if (filter) {
+      if (filter === "All") {
+        setMenu(Menu);
+      } else {
         const newMenu = Menu.filter((item) => item.category === filter);
         setMenu(newMenu);
-      }else {
-        setMenu(Menu)
       }
     };
     filterMenu();
-  }, [filter,Menu]);
+  }, [filter, Menu]);
 
   return (
     <div className="menu-list-container">

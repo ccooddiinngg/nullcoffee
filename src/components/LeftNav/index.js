@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import "./index.css";
 
 export default function LeftNav({ setFilter }) {
+  const [selected, setSelected] = useState(0)
+
   const items = [
+    `All`,
     `Americanos`,
     "Brewed Coffees",
     `Cappuccinos`,
@@ -11,16 +14,15 @@ export default function LeftNav({ setFilter }) {
     `Mochas`,
     "Tumbler",
   ];
+
   return (
     <div className="left-nav-container">
-      <div className="left-nav-category" onClick={() => setFilter("")}>
-        All
-      </div>
+      
       {items.map((item, i) => (
         <div
-          className="left-nav-category"
+          className={`left-nav-category ${i === selected? "selected": ""}`} 
           key={i}
-          onClick={() => setFilter(item)}
+          onClick={() => {setSelected(i);setFilter(item)}}
         >
           {item}
         </div>

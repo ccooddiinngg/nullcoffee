@@ -9,6 +9,7 @@ export default function Order() {
   const { product, setProduct, cart, setCart } = useContext(ProductContext);
 
   useEffect(() => {
+    //check if product is empty
     if (Object.keys(product).length > 0) {
       setOpen(true);
       if (product.size.length >= 3) {

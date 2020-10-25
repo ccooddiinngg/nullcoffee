@@ -58,7 +58,7 @@ function CartDetail({ cart, handleRemove, setExtend }) {
   return (
     <div>
       <div className="cart-detail-close-btn" onClick={() => setExtend(false)}>
-        X
+        close
       </div>
       {cart.length === 0
         ? "Cart is empty..."
@@ -77,7 +77,7 @@ function CartDetail({ cart, handleRemove, setExtend }) {
               className="cart-detail-item-btn"
               onClick={() => handleRemove(i)}
             >
-              ✕
+              x
             </div>
           </div>
         ))}
@@ -90,7 +90,7 @@ function CartDetail({ cart, handleRemove, setExtend }) {
 }
 
 function showPrice(price) {
-  return `${Number.parseFloat(price / 100).toFixed(2)} $`;
+  return `$ ${ Number.parseFloat(price / 100).toFixed(2)}`;
 }
 
 function showTotal(cart) {
