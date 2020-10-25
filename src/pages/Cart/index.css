@@ -34,28 +34,24 @@
 
 .cart-bag-icon {
   position: absolute;
-  width: 35px;
-  height: 35px;
+  width: 40px;
+  height: 40px;
   padding: 5px;
-
-  transition: all 0.4s ease-in;
+  transition: all 0.4s linear;
 }
 
 .cart-bag-icon.active {
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  padding: 5px;
+  transform: scale(1.2);
   transition: all 0.4s ease-in;
 }
 
 .cart-details {
   position: fixed;
-  bottom: 0;
+  bottom: 60px;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 860px;
+  height: max-content;
   width: 100vw;
   background-color: var(--grey);
   z-index: 1000;
@@ -63,51 +59,28 @@
 }
 
 .cart-details.hide {
-  position: fixed;
-  bottom: -860px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  height: 560px;
-  width: 100vw;
-  background-color: var(--grey);
-  z-index: 1000;
+  bottom: -100%;
   transition: all 0.5s ease-in;
 }
 
-.cart-details .cart-detail-close-btn {
-  font-size: 1.2rem;
-  color: var(--black);
-  position: fixed;
-  right: 20px;
-  bottom: 830px;
-  height: 15px;
-  transition: all 0.5s ease-in;
-  cursor: pointer;
-}
-
-.cart-details.hide .cart-detail-close-btn {
-  font-size: 1.2rem;
-  color: var(--black);
-  position: fixed;
-  right: 20px;
-  bottom: -830px;
-  height: 15px;
-  transition: all 0.5s ease-in;
+.cart-detail-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
   cursor: pointer;
 }
 
 .cart-detail-item {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   align-items: center;
   margin: 10px;
 }
 .cart-detail-item-text {
-  font-size: 1rem;
-  color:var(--black);
+  font-size: 0.8rem;
+  color: var(--black);
   padding: 5px;
-  margin: 10px;
+  margin: 5px;
 }
 
 .cart-detail-item-btn {
@@ -118,7 +91,7 @@
 
 .cart-detail-total-price {
   font-size: 1.1rem;
-  color:var(--black);
+  color: var(--black);
   padding: 5px;
   margin: 10px;
 }

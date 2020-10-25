@@ -18,12 +18,11 @@ export default function Order() {
         setSelected(0);
       }
     }
+    
   }, [product]);
 
   const handleAdd = () => {
-    
     if (cart.length >= 10) {
-      
     } else {
       const order = {
         title: product.title,
@@ -67,12 +66,11 @@ export default function Order() {
           ))}
         </div>
         <div className="order-btn-group">
-          <div className="order-btn-cancel" onClick={handleCancel}>
-            Done
-          </div>
-
           <div className="order-btn-ok" onClick={handleAdd}>
             Add
+          </div>
+          <div className="order-btn-ok" onClick={handleCancel}>
+            Close
           </div>
         </div>
       </div>

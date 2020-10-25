@@ -19,11 +19,18 @@ export default function Cart() {
       setMessage("Cart is full!");
     }
 
-    const timer = setTimeout(() => {
+    const timer1 = setTimeout(() => {
       setAdding(false);
+    }, 1000);
+
+    const timer2 = setTimeout(() => {
       setMessage("");
-    }, 2000);
-    return () => clearTimeout(timer);
+    }, 3000);
+
+    return () => {
+      clearTimeout(timer1);
+      clearTimeout(timer2);
+    };
   }, [cart]);
 
   const handleRemove = (i) => {
@@ -33,6 +40,9 @@ export default function Cart() {
   return (
     <>
       <div className={`cart-details ${extend ? "" : "hide"}`}>
+        <div className="cart-detail-close-btn" onClick={() => setExtend(false)}>
+          close
+        </div>
         <CartDetail
           cart={cart}
           handleRemove={handleRemove}
@@ -56,10 +66,7 @@ export default function Cart() {
 
 function CartDetail({ cart, handleRemove, setExtend }) {
   return (
-    <div>
-      <div className="cart-detail-close-btn" onClick={() => setExtend(false)}>
-        close
-      </div>
+    <div className="cart-detail-item-text">
       {cart.length === 0
         ? "Cart is empty..."
         : `Total ${cart.length} item${
@@ -68,11 +75,11 @@ function CartDetail({ cart, handleRemove, setExtend }) {
       <div>
         {cart.map((item, i) => (
           <div className="cart-detail-item" key={i}>
-            <span className="cart-detail-item-text">{item.title}</span>
-            <span className="cart-detail-item-text">{item.size}</span>
-            <span className="cart-detail-item-text">
+            <div className="cart-detail-item-text">{item.title}</div>
+            <div className="cart-detail-item-text">{item.size}</div>
+            <div className="cart-detail-item-text" style={{ minWidth: 50 }}>
               {showPrice(item.price)}
-            </span>
+            </div>
             <div
               className="cart-detail-item-btn"
               onClick={() => handleRemove(i)}
@@ -90,7 +97,7 @@ function CartDetail({ cart, handleRemove, setExtend }) {
 }
 
 function showPrice(price) {
-  return `$ ${ Number.parseFloat(price / 100).toFixed(2)}`;
+  return `$ ${Number.parseFloat(price / 100).toFixed(2)}`;
 }
 
 function showTotal(cart) {
